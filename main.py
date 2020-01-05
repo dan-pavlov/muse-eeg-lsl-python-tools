@@ -1,4 +1,4 @@
-from pylsl import StreamInlet, resolve_stream
+from pylsl import StreamInlet
 
 from PyQt5 import QtCore, QtWidgets
 import pyqtgraph as pg
@@ -64,12 +64,6 @@ class LiveEEGViewer(pg.GraphicsWindow):
 
         self.setData(timestamp_arr, TP9_arr, AF7_arr, AF8_arr, TP10_arr, AUX_arr)
 
-@pylslhandler.exit_after(10)
-def resolve_conn():
-    print("Looking for an EEG stream...")
-    print("Process will terminate after 10 seconds if no device found")
-    return resolve_stream('type', 'EEG')
-
 def main():
     app = QtWidgets.QApplication([])
     window = LiveEEGViewer()
@@ -81,7 +75,7 @@ def main():
 
 if __name__ == "__main__":
     #first resolve an EEG stream on the lab network
-    streams = resolve_conn()
+    streams = pylslhandler.resolve_conn()
     print("Connection established")
 
     #create a new inlet to read from the stream
