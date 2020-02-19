@@ -1,0 +1,4 @@
+pylsl
+pynput
+pandas
+matplotlib
