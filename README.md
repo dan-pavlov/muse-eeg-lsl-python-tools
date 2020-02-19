@@ -21,6 +21,7 @@ To run the tools:
 * Turn on Muse Headband and set it to pairing mode (do not pair Muse with your Bluetooth module).
 * Open BlueMuse, wait for list to update, click on your Muse device and then click `Start Streaming`
 * Once Muse headset is online and streaming, in the relevant tool directory run `python main.py`
+    * Alternatively, you can make use of ipynb (Jupyter Notebook) versions of the code.
 * After use, close the monitor before disconnecting Muse device.
 
 
